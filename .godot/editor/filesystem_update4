@@ -1,0 +1,6 @@
+res://Scenes/ui.tscn
+res://navigation.tscn
+res://scripts/navigation.gd
+res://scripts/Stats.gd
+res://scripts/ui.gd
+res://character.tscn

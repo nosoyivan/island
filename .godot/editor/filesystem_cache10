@@ -1,0 +1,37 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1752987906
+character.gd::GDScript/GDScript::7873550260609390791::1751299742::0::1::::<>CharacterBody2D<><>0<>0<><>::
+character.png::CompressedTexture2D/CompressedTexture2D::4187425987871106343::1751299742::1752983647::1::::<><><>0<>0<>b88fcf3aae9d80e35551217751471c4a<>res://.godot/imported/character.png-7a996d3b758d22c506b76a7c15391284.ctex::
+character.tscn::PackedScene::6173771701120927167::1752987906::0::1::::<><><>0<>0<><>::uid://dkgahtfi2vfmd::::res://character.gd<>uid://b0wokaenwu7pj::::res://character.png
+icon.webp::CompressedTexture2D/CompressedTexture2D::3626017087650301524::1751299742::1752983647::1::::<><><>0<>0<>c6c2d2a409d3db208320ab54c2d08e4f<>res://.godot/imported/icon.webp-e94f9a68b0f625a567a797079e4d325f.ctex::
+map.png::CompressedTexture2D/CompressedTexture2D::3145940729799782577::1751299742::1752983647::1::::<><><>0<>0<>1b1677755b23e5f82455a8b750fd324e<>res://.godot/imported/map.png-9eea34967fae34f4388f4a32a16da936.ctex::
+navigation.tscn::PackedScene::3030513252173195698::1752987906::0::1::::<><><>0<>0<><>::uid://dcasdlch5dsl8::::res://assets/maps/4store.jpg<>uid://thd46uutq42k::::res://scripts/navigation.gd<>uid://ct7veakwiei3h::::res://character.tscn
+navigation_polygon.res::NavigationPolygon/NavigationPolygon::1088630445248144043::1751299742::0::1::::<><><>0<>0<><>::
+README.md::TextFile/TextFile::-1::1751299742::0::1::::<><><>0<>0<><>::
+::res://addons/::1752983697
+::res://addons/OvaniPlugin/::1752983710
+OvaniPlayer.gd::GDScript/GDScript::9005422530305602802::1723493343::0::1::::OvaniPlayer<>Node<><>0<>1<><>::
+OvaniPlayerIcon.png::CompressedTexture2D/CompressedTexture2D::4023625762694435151::1695607354::1752983710::1::::<><><>0<>0<>c5c7fcb02a934ba85c3a936d4d11733f<>res://.godot/imported/OvaniPlayerIcon.png-1f0068947ed478a558af2d2f094b346c.ctex::
+OvaniSong.gd::GDScript/GDScript::3588555396930480485::1720571625::0::1::::OvaniSong<>Resource<><>0<>1<><>::
+OvaniSongIcon.png::CompressedTexture2D/CompressedTexture2D::8558856412632056021::1695607354::1752983710::1::::<><><>0<>0<>8cb7695492015cf4c6afbe6f14be3da9<>res://.godot/imported/OvaniSongIcon.png-8129973d04f017ca6c8fc477eba8ff18.ctex::
+SeamlessStream.gd::GDScript/GDScript::6871829504841808513::1724723544::0::1::::SeamlessStream<>AudioStream<><>0<>1<><>::
+SeamlessStreamManager.gd::GDScript/GDScript::3207736119880524583::1724723919::0::1::::SeamlessStreamManager<>Node<><>0<>1<><>::
+::res://assets/::1752985067
+::res://assets/audio/::1752983697
+::res://assets/audio/Tropical - Sunfruit (RT 2.4)/::1752983711
+Tropical Sunfruit Cut 30.wav::AudioStreamWAV/AudioStreamWAV::739674889742343729::1750321912::1752983711::1::::<><><>0<>0<>c5ed1534520e20a0e1d8f2963c796941<>res://.godot/imported/Tropical Sunfruit Cut 30.wav-ba55a76eb46bac1f8ef7c34ee1fdc624.sample::
+Tropical Sunfruit Cut 60.wav::AudioStreamWAV/AudioStreamWAV::7861854831867466823::1750321883::1752983711::1::::<><><>0<>0<>d00dc39ec5006966cf30f935f12a2ae2<>res://.godot/imported/Tropical Sunfruit Cut 60.wav-d9d09587acf02dc9ae26dbdbe383abe6.sample::
+Tropical Sunfruit Intensity 1.wav::AudioStreamWAV/AudioStreamWAV::379152198726945918::1750321845::1752983711::1::::<><><>0<>0<>bbadcc07e0cddb4fe80d7cd26e0a5327<>res://.godot/imported/Tropical Sunfruit Intensity 1.wav-06026c22ba572f02d947bd4708dad4ef.sample::
+Tropical Sunfruit Intensity 2.wav::AudioStreamWAV/AudioStreamWAV::2755517147176233268::1750321825::1752983711::1::::<><><>0<>0<>dcaae4cc01796a4c72100f9f46655caa<>res://.godot/imported/Tropical Sunfruit Intensity 2.wav-bc6dde2185fce62f34bd084e30f280ab.sample::
+Tropical Sunfruit Main.wav::AudioStreamWAV/AudioStreamWAV::1871728751124583441::1750321780::1752983711::1::::<><><>0<>0<>54f7c71a3e4f63e59e041a7894a3f373<>res://.godot/imported/Tropical Sunfruit Main.wav-6855edca7af1a97264b70621cbcf2971.sample::
+::res://assets/maps/::1752988612
+4store.jpg::CompressedTexture2D::7300738582811616567::1752984954::1752985104::1::::<><><>0<>0<>b77c231431af3ef3968c1581385f1887<>res://.godot/imported/4store.jpg-7b21c37469c8a2e2def92f718280f95f.ctex::
+4store.png::CompressedTexture2D::5664836376607908493::1752988613::1752988623::1::::<><><>0<>0<>68c1aa40e54aa9327aae907d7e257ce1<>res://.godot/imported/4store.png-85c5b6902a31f374bdc8f8969a1d674c.ctex::
+cave.jpg::CompressedTexture2D::4415345042424442205::1752984972::1752985104::1::::<><><>0<>0<>481d7859fb85d74da8759cd2b89dfb6d<>res://.godot/imported/cave.jpg-abbb1d08bac97bae68bb3d3ed5ce77f0.ctex::
+grass.jpg::CompressedTexture2D::3539973574455816210::1752984965::1752985104::1::::<><><>0<>0<>8db98a19486ad8f07ca47eac9de80820<>res://.godot/imported/grass.jpg-89803c0523a005f22119d4ecce9c54a0.ctex::
+::res://Scenes/::1752987906
+ui.tscn::PackedScene::6743004273857723971::1752987906::0::1::::<><><>0<>0<><>::uid://bjgad00c2xiuc::::res://navigation.tscn<>uid://cdpc7ixmrtie4::::res://scripts/ui.gd
+::res://scripts/::1752987902
+navigation.gd::GDScript::1348274272457280068::1752987902::0::1::::<>Node2D<><>0<>0<><>::
+ui.gd::GDScript::5014552600287687213::1752987589::0::1::::<>Control<><>0<>0<><>::
+Stats.gd::GDScript::5279812170322404265::1752987414::0::1::::<>Node<><>0<>0<><>::
