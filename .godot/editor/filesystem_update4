@@ -1,6 +1,11 @@
 res://Scenes/ui.tscn
 res://navigation.tscn
-res://scripts/navigation.gd
-res://scripts/Stats.gd
-res://scripts/ui.gd
 res://character.tscn
+res://character.gd
+res://scripts/navigation.gd
+res://Scenes/navigation.tscn
+res://scenes/character.tscn
+res://scenes/navigation.tscn
+res://scenes/grass.tscn
+res://scenes/ui.tscn
+res://scripts/ui.gd

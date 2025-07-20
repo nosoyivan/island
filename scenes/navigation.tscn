@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjgad00c2xiuc"]
+[gd_scene load_steps=16 format=3 uid="uid://bjgad00c2xiuc"]
 
 [ext_resource type="Texture2D" uid="uid://dcasdlch5dsl8" path="res://assets/maps/4store.jpg" id="1_ip348"]
 [ext_resource type="Script" uid="uid://thd46uutq42k" path="res://scripts/navigation.gd" id="1_mepwa"]
 [ext_resource type="Texture2D" uid="uid://cmyda61cho80x" path="res://assets/maps/4store.png" id="4_mepwa"]
-[ext_resource type="PackedScene" uid="uid://ct7veakwiei3h" path="res://character.tscn" id="4_n6iop"]
+[ext_resource type="PackedScene" uid="uid://ct7veakwiei3h" path="res://scenes/character.tscn" id="4_n6iop"]
+[ext_resource type="Texture2D" uid="uid://bqo1322cs0mo5" path="res://assets/maps/grass.jpg" id="5_tqf8t"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_k7xsa"]
 vertices = PackedVector2Array(431.781, 504.75, 204.297, 459.07, 208.891, 459.281, 257.922, 366.117, 117.523, 334.391, 285.141, 305.93, 475.289, 296.18, 710.82, 281.453, 686.453, 429.898, 647.133, 343.531, 711.289, 126.891, 726.133, 108.328, 726.961, 277.258, 367.922, -21.1797, 342.852, -81.3438, 529.008, -85.7266, 517.531, 39.6797, 487.102, 291.32, 372.328, 94.5234, 568.477, 77.5313, 469.109, 437.211, 305.188, 257.227, 234.219, 108.961, 232.227, 25.4297, 282.742, 22.5781, 280.719, 108.711, 262.313, 194.406, 148.773, 175.492, 147.227, 119.297, 160.477, 116.891, 597.227, -18.3125, 637.711, -14.7031, 654.023, 64.1172, 655.188, 106.023, 559.727, 320.656, 266.422, 242.828, 527.773, 328.938)
@@ -22,8 +23,26 @@ size = Vector2(161.727, 106)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0h2t"]
 size = Vector2(99.8973, 149)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orrll"]
+size = Vector2(192, 48.4999)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_tqf8t"]
+vertices = PackedVector2Array(744.891, 176, 842.398, 176, 771.68, 249.039, 670.398, 226.977, 713.359, 480.391, 719.758, 589.219, 591.438, 494.102, 637.531, 442.977, 702.539, 166.469, 202.477, 521.297, 49.0625, 536.461, 92.0234, 423.023, 246.844, 339.68, 320.758, 441.117, 277.867, 295.18, 320.68, 245.789, 659.68, 144.219, 662.633, 235.758, 430.508, 436.898, 662.242, 23.6719, 663.938, 20.8281, 701.367, 38.1016, 697.422, 80.0078, 662.227, 109.883, 530.438, 44.8672, 614.461, 6.77344, 293.813, 183.867, 230.813, 149.5, 240.188, 78.7109, 286.398, 56.9219, 374.461, 53.9922, 677.344, 277.93, 647.852, 303.852, 525.813, 492.07)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 0, 3), PackedInt32Array(9, 10, 11, 12, 13), PackedInt32Array(14, 15, 16, 8, 3, 17, 18, 13, 12), PackedInt32Array(19, 20, 21, 22, 23), PackedInt32Array(24, 25, 19, 23, 16, 15), PackedInt32Array(26, 27, 28, 29, 30), PackedInt32Array(17, 31, 32, 18), PackedInt32Array(15, 26, 30, 24), PackedInt32Array(33, 18, 32, 7, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(220, 155, 286, 191, 309, 244, 270, 289, 240, 332, 84, 416, 34, 548, 206, 531, 324, 451, 428, 447, 523, 502, 588, 504, 731, 610, 723, 474, 648, 437, 679, 19, 614, -4, 528, 35, 374, 44, 284, 47, 231, 72), PackedVector2Array(656, 310, 689, 281, 674, 238, 775, 260, 866, 166, 746, 166, 706, 157, 654, 130, 707, 85, 712, 32, 660, 8, 515, 249)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypw01"]
+size = Vector2(68.6795, 187.275)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xl0l"]
+size = Vector2(91.9957, 64.4254)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbu81"]
+size = Vector2(152, 105)
+
 [node name="Navigation" type="Node2D"]
 script = ExtResource("1_mepwa")
+Area = 1
 
 [node name="View" type="Control" parent="."]
 visible = false
@@ -43,40 +62,40 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.12549, 0.12549, 0.407843)
 
-[node name="Map" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(267, 194)
-scale = Vector2(0.942188, 0.942187)
-texture = ExtResource("1_ip348")
-offset = Vector2(112.524, 139.569)
-
 [node name="Character" parent="." instance=ExtResource("4_n6iop")]
-position = Vector2(385, 16)
+position = Vector2(379, 301)
+scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-2, -1)
 offset = Vector2(400, 324)
 process_callback = 0
 
-[node name="Map2" type="Sprite2D" parent="."]
+[node name="Zones" type="Node2D" parent="."]
+
+[node name="Map" type="Sprite2D" parent="Zones"]
+z_index = -1
+position = Vector2(267, 194)
+scale = Vector2(0.942188, 0.942187)
+texture = ExtResource("1_ip348")
+offset = Vector2(112.524, 139.569)
+
+[node name="Map2" type="Sprite2D" parent="Zones"]
 z_index = 1
 position = Vector2(267, 194)
 scale = Vector2(0.942188, 0.942187)
 texture = ExtResource("4_mepwa")
 offset = Vector2(112.524, 139.569)
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Zones"]
 position = Vector2(-40, 92)
 navigation_polygon = SubResource("NavigationPolygon_k7xsa")
-
-[node name="Zones" type="Node2D" parent="."]
 
 [node name="Heal" type="Area2D" parent="Zones"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zones/Heal"]
 position = Vector2(148.008, 432.953)
 rotation = 0.509933
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_k7xsa")
 
 [node name="Tools" type="Area2D" parent="Zones"]
@@ -91,7 +110,6 @@ shape = SubResource("RectangleShape2D_ip348")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zones/Food"]
 position = Vector2(583.02, 116.912)
 rotation = -1.16428
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_mepwa")
 
 [node name="Fight" type="Area2D" parent="Zones"]
@@ -101,6 +119,47 @@ position = Vector2(638.707, 484.826)
 rotation = -0.2562
 shape = SubResource("RectangleShape2D_o0h2t")
 
+[node name="Home2Grass" type="Area2D" parent="Zones"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zones/Home2Grass"]
+position = Vector2(391, 15.25)
+shape = SubResource("RectangleShape2D_orrll")
+
+[node name="GrassZones" type="Node2D" parent="."]
+visible = false
+
+[node name="Map" type="Sprite2D" parent="GrassZones"]
+z_index = -1
+position = Vector2(444, 456)
+rotation = -3.14159
+scale = Vector2(0.942188, 0.942187)
+texture = ExtResource("5_tqf8t")
+offset = Vector2(112.524, 139.569)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="GrassZones"]
+position = Vector2(-40, 92)
+navigation_polygon = SubResource("NavigationPolygon_tqf8t")
+
+[node name="Heal" type="Area2D" parent="GrassZones"]
+position = Vector2(-1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassZones/Heal"]
+position = Vector2(73.3398, 532.363)
+shape = SubResource("RectangleShape2D_ypw01")
+
+[node name="Food" type="Area2D" parent="GrassZones"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassZones/Food"]
+position = Vector2(712.971, 301.208)
+rotation = 0.279253
+shape = SubResource("RectangleShape2D_5xl0l")
+
+[node name="Fight" type="Area2D" parent="GrassZones"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrassZones/Fight"]
+position = Vector2(622, 679.5)
+shape = SubResource("RectangleShape2D_pbu81")
+
 [connection signal="body_entered" from="Zones/Heal" to="." method="HealZone"]
 [connection signal="body_exited" from="Zones/Heal" to="." method="BaseZone"]
 [connection signal="body_entered" from="Zones/Tools" to="." method="ToolZone"]
@@ -109,3 +168,5 @@ shape = SubResource("RectangleShape2D_o0h2t")
 [connection signal="body_exited" from="Zones/Food" to="." method="BaseZone"]
 [connection signal="body_entered" from="Zones/Fight" to="." method="FightZone"]
 [connection signal="body_exited" from="Zones/Fight" to="." method="BaseZone"]
+[connection signal="body_entered" from="Zones/Home2Grass" to="." method="Home2GrassZone"]
+[connection signal="body_exited" from="Zones/Home2Grass" to="." method="BaseZone"]

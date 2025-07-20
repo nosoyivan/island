@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3cmkbjsbmlx0"]
+[gd_scene load_steps=4 format=3 uid="uid://c3cmkbjsbmlx0"]
 
-[ext_resource type="PackedScene" uid="uid://bjgad00c2xiuc" path="res://navigation.tscn" id="1_jxero"]
+[ext_resource type="PackedScene" uid="uid://bjgad00c2xiuc" path="res://scenes/navigation.tscn" id="1_jxero"]
 [ext_resource type="Script" uid="uid://cdpc7ixmrtie4" path="res://scripts/ui.gd" id="1_qdvrb"]
+[ext_resource type="PackedScene" uid="uid://dgwbtakaxpsr0" path="res://scenes/grass.tscn" id="2_yev5y"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -49,6 +50,9 @@ grow_vertical = 2
 handle_input_locally = false
 size = Vector2i(600, 600)
 render_target_update_mode = 4
+
+[node name="Grass" parent="View/SubViewportContainer/SubViewport" instance=ExtResource("2_yev5y")]
+visible = false
 
 [node name="Navigation" parent="View/SubViewportContainer/SubViewport" instance=ExtResource("1_jxero")]
 
@@ -106,4 +110,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0.309804, 0.188235, 1)
 
+[connection signal="message" from="View/SubViewportContainer/SubViewport/Grass" to="." method="FooterMessage"]
 [connection signal="message" from="View/SubViewportContainer/SubViewport/Navigation" to="." method="FooterMessage"]
+[connection signal="swap" from="View/SubViewportContainer/SubViewport/Navigation" to="." method="Swap"]
