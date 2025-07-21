@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3cmkbjsbmlx0"]
+[gd_scene load_steps=3 format=3 uid="uid://c3cmkbjsbmlx0"]
 
 [ext_resource type="PackedScene" uid="uid://bjgad00c2xiuc" path="res://scenes/navigation.tscn" id="1_jxero"]
 [ext_resource type="Script" uid="uid://cdpc7ixmrtie4" path="res://scripts/ui.gd" id="1_qdvrb"]
-[ext_resource type="PackedScene" uid="uid://dgwbtakaxpsr0" path="res://scenes/grass.tscn" id="2_yev5y"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -48,11 +47,11 @@ grow_vertical = 2
 
 [node name="SubViewport" type="SubViewport" parent="View/SubViewportContainer"]
 handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
 size = Vector2i(600, 600)
+size_2d_override_stretch = true
 render_target_update_mode = 4
-
-[node name="Grass" parent="View/SubViewportContainer/SubViewport" instance=ExtResource("2_yev5y")]
-visible = false
 
 [node name="Navigation" parent="View/SubViewportContainer/SubViewport" instance=ExtResource("1_jxero")]
 
@@ -110,6 +109,51 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0.309804, 0.188235, 1)
 
-[connection signal="message" from="View/SubViewportContainer/SubViewport/Grass" to="." method="FooterMessage"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Footer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="GridContainer" parent="Footer/HBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2
+
+[node name="HP" type="Label" parent="Footer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "HP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ATK" type="Label" parent="Footer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "ATK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DEF" type="Label" parent="Footer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "DEF"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MANA" type="Label" parent="Footer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "MANA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="message" from="View/SubViewportContainer/SubViewport/Navigation" to="." method="FooterMessage"]
 [connection signal="swap" from="View/SubViewportContainer/SubViewport/Navigation" to="." method="Swap"]

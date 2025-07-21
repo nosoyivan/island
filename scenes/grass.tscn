@@ -79,7 +79,7 @@ shape = SubResource("RectangleShape2D_mepwa")
 [node name="Fight" type="Area2D" parent="GrassZones"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrassZones/Fight"]
-position = Vector2(622, 679.5)
+position = Vector2(622, 661)
 shape = SubResource("RectangleShape2D_o0h2t")
 
 [connection signal="body_entered" from="GrassZones/Heal" to="." method="HealZone"]

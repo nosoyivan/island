@@ -8,7 +8,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	_updateUI()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -26,3 +26,11 @@ func Swap(scene):
 		print("touch")
 		pass
 	pass # Replace with function body.
+
+
+
+func _updateUI():
+	$Footer/HBoxContainer/VBoxContainer/HP.text = str("HP: ",Stats.HP)
+	$Footer/HBoxContainer/VBoxContainer/ATK.text = str("ATK: ",Stats.ATK)
+	$Footer/HBoxContainer/VBoxContainer/DEF.text = str("DEF: ",Stats.DEF)
+	$Footer/HBoxContainer/VBoxContainer/MANA.text = str("MANA: ",Stats.MANA)
