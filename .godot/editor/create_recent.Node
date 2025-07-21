@@ -1,9 +1,10 @@
+RichTextLabel
+VBoxContainer
 CollisionShape2D
 Area2D
 HFlowContainer
 GridContainer
 Label
-VBoxContainer
 HBoxContainer
 RayCast2D
 Node2D

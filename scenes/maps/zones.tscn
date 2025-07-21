@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxttwnlku7cy8"]
+
+[ext_resource type="Texture2D" uid="uid://dcasdlch5dsl8" path="res://assets/maps/4store.jpg" id="1_b0m6h"]
+[ext_resource type="Texture2D" uid="uid://cmyda61cho80x" path="res://assets/maps/4store.png" id="2_y0c4c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7xsa"]
+size = Vector2(151.359, 114.549)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ip348"]
+size = Vector2(70.8408, 108.917)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mepwa"]
+size = Vector2(161.727, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0h2t"]
+size = Vector2(99.8973, 149)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orrll"]
+size = Vector2(192, 48.4999)
+
+[node name="Zones" type="Node2D"]
+
+[node name="Map" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(267, 194)
+scale = Vector2(0.942188, 0.942187)
+texture = ExtResource("1_b0m6h")
+offset = Vector2(112.524, 139.569)
+
+[node name="Map2" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(267, 194)
+scale = Vector2(0.942188, 0.942187)
+texture = ExtResource("2_y0c4c")
+offset = Vector2(112.524, 139.569)
+
+[node name="Heal" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heal"]
+position = Vector2(148.008, 432.953)
+rotation = 0.509933
+shape = SubResource("RectangleShape2D_k7xsa")
+
+[node name="Tools" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tools"]
+position = Vector2(213.213, 147.428)
+rotation = 2.96307
+shape = SubResource("RectangleShape2D_ip348")
+
+[node name="Food" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Food"]
+position = Vector2(583.02, 116.912)
+rotation = -1.16428
+shape = SubResource("RectangleShape2D_mepwa")
+
+[node name="Fight" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fight"]
+position = Vector2(638.707, 484.826)
+rotation = -0.2562
+shape = SubResource("RectangleShape2D_o0h2t")
+
+[node name="Home2Grass" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Home2Grass"]
+position = Vector2(391, 15.25)
+shape = SubResource("RectangleShape2D_orrll")

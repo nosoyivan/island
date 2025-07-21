@@ -32,7 +32,6 @@ func _input(event):
 	if event.is_action_pressed("RMB"):
 		pass
 
-
 func set_movement_target(movement_target: Vector2) -> void:
 	navigation_agent.target_position = movement_target
 
@@ -47,9 +46,12 @@ func _physics_process(_delta: float) -> void:
 	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
 	move_and_slide()
 
-
 func contact(body):
 	if body.is_in_group("Enemy"):
-		attack.emit(Stats.ATK)
-		move.emit(position)
-		pass
+		_attack()
+
+func _attack():
+	stop(position)
+	attack.emit(Stats.ATK)
+	move.emit(position)
+	pass

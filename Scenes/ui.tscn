@@ -109,7 +109,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0.309804, 0.188235, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Footer"]
+[node name="Stats" type="HBoxContainer" parent="Footer"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -117,13 +117,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="GridContainer" parent="Footer/HBoxContainer"]
+[node name="Main" type="VBoxContainer" parent="Footer/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Name" type="Label" parent="Footer/Stats/Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Main"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stats" type="GridContainer" parent="Footer/Stats/Main"]
 layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 2
 
-[node name="HP" type="Label" parent="Footer/HBoxContainer/VBoxContainer"]
+[node name="HP" type="Label" parent="Footer/Stats/Main/Stats"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -131,7 +143,7 @@ text = "HP"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ATK" type="Label" parent="Footer/HBoxContainer/VBoxContainer"]
+[node name="ATK" type="Label" parent="Footer/Stats/Main/Stats"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -139,7 +151,7 @@ text = "ATK"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DEF" type="Label" parent="Footer/HBoxContainer/VBoxContainer"]
+[node name="DEF" type="Label" parent="Footer/Stats/Main/Stats"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -147,7 +159,7 @@ text = "DEF"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MANA" type="Label" parent="Footer/HBoxContainer/VBoxContainer"]
+[node name="MANA" type="Label" parent="Footer/Stats/Main/Stats"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -155,5 +167,63 @@ text = "MANA"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Info" type="RichTextLabel" parent="Footer/Stats"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Enemy" type="VBoxContainer" parent="Footer/Stats"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EnemyLabel" type="Label" parent="Footer/Stats/Enemy"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Enemy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stats" type="GridContainer" parent="Footer/Stats/Enemy"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2
+
+[node name="HP" type="Label" parent="Footer/Stats/Enemy/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "HP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ATK" type="Label" parent="Footer/Stats/Enemy/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "ATK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DEF" type="Label" parent="Footer/Stats/Enemy/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "DEF"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MANA" type="Label" parent="Footer/Stats/Enemy/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "MANA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="battleEnd" from="View/SubViewportContainer/SubViewport/Navigation" to="." method="_battleEnd"]
+[connection signal="battleStart" from="View/SubViewportContainer/SubViewport/Navigation" to="." method="_battleStart"]
 [connection signal="message" from="View/SubViewportContainer/SubViewport/Navigation" to="." method="FooterMessage"]
 [connection signal="swap" from="View/SubViewportContainer/SubViewport/Navigation" to="." method="Swap"]

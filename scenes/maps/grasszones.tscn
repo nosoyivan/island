@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://clavamqu4gxeh"]
+
+[ext_resource type="Texture2D" uid="uid://bqo1322cs0mo5" path="res://assets/maps/grass.jpg" id="1_i00ub"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypw01"]
+size = Vector2(68.6795, 187.275)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xl0l"]
+size = Vector2(91.9957, 64.4254)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbu81"]
+size = Vector2(152, 105)
+
+[node name="GrassZones" type="Node2D"]
+
+[node name="Map" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(444, 456)
+rotation = -3.14159
+scale = Vector2(0.942188, 0.942187)
+texture = ExtResource("1_i00ub")
+offset = Vector2(112.524, 139.569)
+
+[node name="Heal" type="Area2D" parent="."]
+position = Vector2(-1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heal"]
+position = Vector2(73.3398, 532.363)
+shape = SubResource("RectangleShape2D_ypw01")
+
+[node name="Grass2Cave" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grass2Cave"]
+position = Vector2(712.971, 301.208)
+rotation = 0.279253
+shape = SubResource("RectangleShape2D_5xl0l")
+
+[node name="Grass2Home" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grass2Home"]
+position = Vector2(646, 639)
+rotation = -0.47822
+shape = SubResource("RectangleShape2D_pbu81")

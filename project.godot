@@ -19,6 +19,7 @@ config/icon="res://icon.webp"
 [autoload]
 
 Stats="*res://scripts/Stats.gd"
+Battle="*res://scripts/Battle.gd"
 
 [debug]
 
@@ -31,6 +32,10 @@ window/size/viewport_height=750
 window/size/window_width_override=1152
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[global_group]
+
+Enemy=""
 
 [input]
 

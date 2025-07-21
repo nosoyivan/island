@@ -2,6 +2,8 @@ extends Node2D
 
 signal message(text: String)
 signal swap(scene: String)
+signal battleStart
+signal battleEnd
 
 @onready var zones = $Zones
 @onready var grasszones = $GrassZones
@@ -14,6 +16,12 @@ signal swap(scene: String)
 const GRASS_PATH = preload("res://assets/paths/GrassPath.tres")
 const HOME_PATH = preload("res://assets/paths/HomePath.tres")
 const CAVE_PATH = preload("res://assets/paths/CavePath.tres")
+
+var CAVEZONES = preload("res://scenes/maps/cavezones.tscn").instantiate()
+var GRASSZONES = preload("res://scenes/maps/grasszones.tscn").instantiate()
+var ZONES = preload("res://scenes/maps/zones.tscn").instantiate()
+
+
 @export_flags("Home:1", "ome:2", "Grass:4", "Cave:5") var Area
 # Called when the node enters the scene tree for the first time.
 
@@ -22,10 +30,11 @@ func _ready():
 		1: 
 			var pos = Vector2(379.0, 301.0)
 			_hidezone(pos)
-			zones.show()
+			add_child(ZONES)
+			#zones.show()
 			path.navigation_polygon = HOME_PATH
 		4: 
-			grasszones.hide()
+			#grasszones.hide()
 			p.position = Vector2(634.0, 606.0)
 			path.navigation_polygon = GRASS_PATH
 
@@ -73,9 +82,10 @@ func BaseZone(body):
 	pass # Replace with function body.
 
 func Home2GrassZone(body):
+	print("Home2GrassZone")
 	var pos = Vector2(570, 570)
 	_hidezone(pos)
-	grasszones.show()
+	ZONES.queue_free()
 	path.navigation_polygon = GRASS_PATH
 
 
@@ -100,6 +110,13 @@ func Cave2GrassZone(body):
 func _hidezone(pos):
 	p.position = pos
 	p.stop(pos)
-	zones.hide()
-	grasszones.hide()
-	cavezones.hide()
+	#zones.hide()
+	#grasszones.hide()
+	#cavezones.hide()
+
+
+func _battleStart(dmg):
+	battleStart.emit()
+
+func _battleEnd(dmg):
+	battleEnd.emit()

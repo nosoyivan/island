@@ -5,7 +5,7 @@ signal move(pos)
 
 
 var HP : int = 10
-var ATK : int = 3
+var ATK : int = 4
 var DEF : int = 3
 var MANA : int = 5
 
@@ -15,7 +15,8 @@ func _physics_process(delta):
 
 
 func attacked(dmg):
-	print(dmg)
+	print(dmg,"-=",DEF)
+	dmg -= DEF
 	pass # Replace with function body.
 
 func saw(pos):
