@@ -1,4 +1,13 @@
-[gd_scene format=3 uid="uid://cmhwifb4ylbac"]
+[gd_scene load_steps=6 format=3 uid="uid://cmhwifb4ylbac"]
+
+[ext_resource type="Texture2D" uid="uid://cl7jam8k5fmev" path="res://card/panel-transparent-center-025.png" id="1_q1c41"]
+[ext_resource type="Texture2D" uid="uid://ddkjay8vccbkc" path="res://card/panel-border-025.png" id="2_a7xbw"]
+[ext_resource type="Texture2D" uid="uid://dpeaeg0gu2yo6" path="res://card/panel-transparent-border-021.png" id="3_a7xbw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q1c41"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kxo5j"]
+load_path = "res://.godot/imported/panel-025.png-7d07822ec71cf1f1cb2a66e3ed46549d.ctex"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,3 +18,135 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Car" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 500.0
+
+[node name="BG" type="NinePatchRect" parent="Car"]
+visible = false
+texture_filter = 1
+material = SubResource("ShaderMaterial_q1c41")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_kxo5j")
+patch_margin_left = 45
+patch_margin_top = 45
+patch_margin_right = 45
+patch_margin_bottom = 45
+
+[node name="Border Panel" type="NinePatchRect" parent="Car"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_q1c41")
+patch_margin_left = 45
+patch_margin_top = 45
+patch_margin_right = 45
+patch_margin_bottom = 45
+
+[node name="Border" type="NinePatchRect" parent="Car"]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_a7xbw")
+patch_margin_left = 45
+patch_margin_top = 45
+patch_margin_right = 45
+patch_margin_bottom = 45
+
+[node name="BG2" type="Control" parent="Car"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top Bar" type="HBoxContainer" parent="Car/BG2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 80.0
+grow_horizontal = 2
+
+[node name="Left" type="VBoxContainer" parent="Car/BG2/Top Bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Level" type="RichTextLabel" parent="Car/BG2/Top Bar/Left"]
+layout_mode = 2
+size_flags_vertical = 7
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Car/BG2/Top Bar/Left"]
+layout_mode = 2
+size_flags_vertical = 7
+theme_override_colors/font_color = Color(0.741176, 1, 0, 1)
+text = "   "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Center" type="VBoxContainer" parent="Car/BG2/Top Bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 7.0
+alignment = 1
+
+[node name="Name" type="RichTextLabel" parent="Car/BG2/Top Bar/Center"]
+layout_mode = 2
+size_flags_vertical = 7
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+bbcode_enabled = true
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="VBoxContainer" parent="Car/BG2/Top Bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="Car/BG2/Top Bar/Right"]
+modulate = Color(0, 0.270588, 1, 1)
+layout_mode = 2
+texture = ExtResource("3_a7xbw")
+expand_mode = 4
+
+[node name="Type" type="RichTextLabel" parent="Car/BG2/Top Bar/Right"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 7
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "Type
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Car/BG2/Top Bar/Right"]
+layout_mode = 2
+size_flags_vertical = 7
+theme_override_colors/font_color = Color(0.741176, 1, 0, 1)
+text = "   "
+horizontal_alignment = 1
+vertical_alignment = 1
