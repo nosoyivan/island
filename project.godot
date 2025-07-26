@@ -28,15 +28,19 @@ gdscript/warnings/untyped_declaration=1
 
 [display]
 
-window/size/viewport_width=1000
-window/size/viewport_height=750
-window/size/window_width_override=1152
+window/size/viewport_width=440
+window/size/viewport_height=760
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
 [global_group]
 
 Enemy=""
+
+[gui]
+
+theme/custom="uid://fbho5nd5woqy"
+theme/custom_font="uid://584qr3s82siv"
 
 [input]
 

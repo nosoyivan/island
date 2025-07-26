@@ -1,0 +1,224 @@
+[gd_scene load_steps=6 format=3 uid="uid://djnwos0g4k4fs"]
+
+[ext_resource type="Texture2D" uid="uid://cwj0xwe13dcx5" path="res://card/panel-transparent-center-021.png" id="1_ao2fv"]
+[ext_resource type="Script" uid="uid://bqvcaabbptkak" path="res://digi/interface.gd" id="1_dukn8"]
+[ext_resource type="Theme" uid="uid://fbho5nd5woqy" path="res://digi/theme.tres" id="1_waedn"]
+[ext_resource type="Texture2D" uid="uid://cv4nvp4o5ap0q" path="res://card/bar.png" id="3_ab68t"]
+[ext_resource type="Script" uid="uid://c042ipn0btv8c" path="res://digi/texture_rect.gd" id="3_js4n4"]
+
+[node name="Interface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_waedn")
+script = ExtResource("1_dukn8")
+
+[node name="Border Panel" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ao2fv")
+patch_margin_left = 45
+patch_margin_top = 45
+patch_margin_right = 45
+patch_margin_bottom = 45
+
+[node name="HUD" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 400.0
+offset_bottom = 400.0
+
+[node name="Border Panel" type="NinePatchRect" parent="HUD"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ao2fv")
+patch_margin_left = 45
+patch_margin_top = 45
+patch_margin_right = 45
+patch_margin_bottom = 45
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -32.0
+offset_bottom = 79.0
+grow_horizontal = 2
+texture = ExtResource("3_ab68t")
+expand_mode = 1
+script = ExtResource("3_js4n4")
+
+[node name="TextureRect2" type="TextureRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 32.0
+offset_top = 281.0
+offset_right = -8.0
+offset_bottom = 352.0
+grow_horizontal = 2
+texture = ExtResource("3_ab68t")
+expand_mode = 1
+flip_h = true
+flip_v = true
+script = ExtResource("3_js4n4")
+
+[node name="Bar" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 40.0
+offset_top = 440.0
+offset_right = 401.0
+offset_bottom = 480.0
+
+[node name="Border Panel" type="NinePatchRect" parent="Bar"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 842.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_ao2fv")
+patch_margin_left = 45
+patch_margin_top = 45
+patch_margin_right = 45
+patch_margin_bottom = 45
+
+[node name="Button1" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 40.0
+offset_top = 520.0
+offset_right = 200.0
+offset_bottom = 600.0
+
+[node name="Border Panel" type="NinePatchRect" parent="Button1"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ao2fv")
+patch_margin_left = 45
+patch_margin_top = 45
+patch_margin_right = 45
+patch_margin_bottom = 45
+
+[node name="Button" type="Button" parent="Button1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Button"
+
+[node name="Button2" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 240.0
+offset_top = 520.0
+offset_right = 400.0
+offset_bottom = 600.0
+
+[node name="Border Panel" type="NinePatchRect" parent="Button2"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ao2fv")
+patch_margin_left = 45
+patch_margin_top = 45
+patch_margin_right = 45
+patch_margin_bottom = 45
+
+[node name="Button" type="Button" parent="Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Button"
+
+[node name="Button3" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 40.0
+offset_top = 640.0
+offset_right = 200.0
+offset_bottom = 720.0
+
+[node name="Border Panel" type="NinePatchRect" parent="Button3"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ao2fv")
+patch_margin_left = 45
+patch_margin_top = 45
+patch_margin_right = 45
+patch_margin_bottom = 45
+
+[node name="Button" type="Button" parent="Button3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Button"
+
+[node name="Button4" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 240.0
+offset_top = 640.0
+offset_right = 400.0
+offset_bottom = 720.0
+
+[node name="Border Panel" type="NinePatchRect" parent="Button4"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ao2fv")
+patch_margin_left = 45
+patch_margin_top = 45
+patch_margin_right = 45
+patch_margin_bottom = 45
+
+[node name="Button" type="Button" parent="Button4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Button"

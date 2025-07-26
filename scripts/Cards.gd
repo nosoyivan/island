@@ -65,4 +65,5 @@ func print_deck() -> void:
 
 	for c in deck:
 		# Print each card's number and the full dictionary info.
-		print("Card #", c["Num"], " -> ", c)
+		#print("Card #", c["Num"], " -> ", c)
+		pass

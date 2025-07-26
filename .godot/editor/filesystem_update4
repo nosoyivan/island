@@ -1,4 +1,3 @@
 res://card/control.tscn
-res://assets/paths/GrassPath.tres
-res://scripts/Cards.gd
-res://scripts/Cards1.gd
+res://digi/Interface.tscn
+res://scripts/Stats.gd

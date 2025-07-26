@@ -1,4 +1,6 @@
+ColorRect
 TextureRect
+Button
 Control
 Sprite2D
 RichTextLabel
@@ -11,5 +13,3 @@ Area2D
 HFlowContainer
 GridContainer
 RayCast2D
-Node2D
-SubViewport

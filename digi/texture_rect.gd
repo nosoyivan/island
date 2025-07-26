@@ -1,21 +1,10 @@
-extends Node
+extends TextureRect
 
-var Mode = 0
-
-var HP : int = 10
-var ATK : int = 4
-var DEF : int = 3
-var MANA : int = 5
-
-var zone : String = "Base"
-
-var mode : String = "Base"
-
-var consol : String = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
