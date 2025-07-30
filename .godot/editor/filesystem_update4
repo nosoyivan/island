@@ -1,3 +1,12 @@
 res://card/control.tscn
+res://digi/theme.tres
+res://assets/paths/GrassPath.tres
 res://digi/Interface.tscn
-res://scripts/Stats.gd
+res://scenes/navigation.tscn
+res://scenes/ui.tscn
+res://scripts/navigation.gd
+res://scenes/maps/grasszones.tscn
+res://scenes/maps/zones.tscn
+res://scenes/maps/cavezones.tscn
+res://scenes/character.tscn
+res://digi/interface.gd

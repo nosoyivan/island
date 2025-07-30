@@ -37,20 +37,6 @@ offset_top = 40.0
 offset_right = 400.0
 offset_bottom = 400.0
 
-[node name="Border Panel" type="NinePatchRect" parent="HUD"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_ao2fv")
-patch_margin_left = 45
-patch_margin_top = 45
-patch_margin_right = 45
-patch_margin_bottom = 45
-
 [node name="TextureRect" type="TextureRect" parent="HUD"]
 layout_mode = 1
 anchors_preset = 10
@@ -63,21 +49,38 @@ grow_horizontal = 2
 texture = ExtResource("3_ab68t")
 expand_mode = 1
 script = ExtResource("3_js4n4")
+sel = 0
 
 [node name="TextureRect2" type="TextureRect" parent="HUD"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 32.0
-offset_top = 281.0
+offset_top = 300.0
 offset_right = -8.0
-offset_bottom = 352.0
+offset_bottom = 371.0
 grow_horizontal = 2
 texture = ExtResource("3_ab68t")
 expand_mode = 1
 flip_h = true
 flip_v = true
 script = ExtResource("3_js4n4")
+sel = 1
+
+[node name="Border Panel" type="NinePatchRect" parent="HUD"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ao2fv")
+patch_margin_left = 45
+patch_margin_top = 45
+patch_margin_right = 45
+patch_margin_bottom = 45
 
 [node name="Bar" type="Control" parent="."]
 anchors_preset = 0
@@ -103,6 +106,26 @@ patch_margin_top = 45
 patch_margin_right = 45
 patch_margin_bottom = 45
 
+[node name="DayBar" type="ProgressBar" parent="Bar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+show_percentage = false
+
+[node name="Info" type="RichTextLabel" parent="Bar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Button1" type="Control" parent="."]
 anchors_preset = 0
 offset_left = 40.0
@@ -125,12 +148,14 @@ patch_margin_right = 45
 patch_margin_bottom = 45
 
 [node name="Button" type="Button" parent="Button1"]
+modulate = Color(0.35, 0.35, 0.35, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_waedn")
 text = "Button"
 
 [node name="Button2" type="Control" parent="."]
@@ -222,3 +247,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Button"
+
+[connection signal="value_changed" from="Bar/DayBar" to="." method="_dayBar"]

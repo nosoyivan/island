@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Navigation Polygon 2D"
 config/tags=PackedStringArray("2d", "ai", "demo", "official")
-run/main_scene="uid://c3cmkbjsbmlx0"
+run/main_scene="uid://djnwos0g4k4fs"
 config/features=PackedStringArray("4.4")
 config/icon="res://icon.webp"
 
@@ -28,7 +28,7 @@ gdscript/warnings/untyped_declaration=1
 
 [display]
 
-window/size/viewport_width=440
+window/size/viewport_width=1000
 window/size/viewport_height=760
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
@@ -67,6 +67,7 @@ common/physics_interpolation=true
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.160784, 0.172549, 0.278431, 1)

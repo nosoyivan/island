@@ -1,9 +1,11 @@
+Node2D
+ProgressBar
+RichTextLabel
 ColorRect
 TextureRect
 Button
 Control
 Sprite2D
-RichTextLabel
 VBoxContainer
 Label
 HBoxContainer
@@ -11,5 +13,3 @@ NinePatchRect
 CollisionShape2D
 Area2D
 HFlowContainer
-GridContainer
-RayCast2D
