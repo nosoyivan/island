@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1i5quf0207xj"]
 
 [ext_resource type="Texture2D" uid="uid://b353c8pjf4h2t" path="res://assets/maps/cave.jpg" id="1_5kpy7"]
-[ext_resource type="PackedScene" uid="uid://cu7vqwjor21po" path="res://scenes/enemy.tscn" id="2_ru4qv"]
+[ext_resource type="PackedScene" uid="uid://cu7vqwjor21po" path="res://Scenes/enemy.tscn" id="2_ru4qv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmum3"]
 size = Vector2(91.6429, 106.372)
@@ -22,9 +22,9 @@ position = Vector2(712.971, 301.208)
 rotation = 0.279253
 shape = SubResource("RectangleShape2D_fmum3")
 
-[node name="Cave2Grass" type="Area2D" parent="."]
+[node name="Cave2GrassZone" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave2Grass"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave2GrassZone"]
 position = Vector2(290.025, 118.461)
 rotation = -0.118682
 shape = SubResource("RectangleShape2D_fmum3")

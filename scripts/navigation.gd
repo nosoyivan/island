@@ -36,6 +36,7 @@ func _ready():
 			path.navigation_polygon = GRASS_PATH
 
 func addZone():
+			ZONES = preload("res://scenes/maps/zones.tscn").instantiate()
 			add_child(ZONES)
 			for child in ZONES.get_children():
 				if child is Area2D:
@@ -57,16 +58,20 @@ func addZone():
 			Fight.body_entered.connect(Callable(self, "FightZone"))
 
 func addGRASSZone():
+			var GRASSZONES = preload("res://scenes/maps/grasszones.tscn").instantiate()
 			add_child(GRASSZONES)
 			var Grass2Cave = GRASSZONES.get_node("Grass2Cave") as Area2D
 			Grass2Cave.monitoring = true    # ensure it’s monitoring bodies
 			Grass2Cave.body_entered.connect(Callable(self, "Grass2CaveZone"))
+			var Grass2Home = GRASSZONES.get_node("Grass2Home") as Area2D
+			Grass2Home.monitoring = true    # ensure it’s monitoring bodies
+			Grass2Home.body_entered.connect(Callable(self, "Grass2HomeZone"))
 
 func addCAVEZone():
 			add_child(CAVEZONES)
-			#var Grass2Cave = GRASSZONES.get_node("Grass2Cave") as Area2D
-			#Grass2Cave.monitoring = true    # ensure it’s monitoring bodies
-			#Grass2Cave.body_entered.connect(Callable(self, "Grass2CaveZone"))
+			var Cave2Grass = CAVEZONES.get_node("Cave2GrassZone") as Area2D
+			Cave2Grass.monitoring = true    # ensure it’s monitoring bodies
+			Cave2Grass.body_entered.connect(Callable(self, "Cave2GrassZone"))
 
 func _process(delta):
 	pass
@@ -118,8 +123,9 @@ func Home2GrassZone(body):
 	path.navigation_polygon = GRASS_PATH
 
 func Grass2HomeZone(body):
-	var pos = Vector2(420, 95)
+	var pos = Vector2(379.0, 100)
 	_hidezone(pos)
+	addZone()
 	#zones.show()
 	path.navigation_polygon = HOME_PATH
 
@@ -132,8 +138,10 @@ func Grass2CaveZone(body):
 	path.navigation_polygon = CAVE_PATH
 
 func Cave2GrassZone(body):
-	var pos = Vector2(607, 274)
+	var pos = Vector2(600, 270)
 	_hidezone(pos)
+	CAVEZONES.queue_free()
+	addGRASSZone()
 	#grasszones.show()
 	path.navigation_polygon = GRASS_PATH
 

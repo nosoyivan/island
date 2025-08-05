@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cxttwnlku7cy8"]
 
 [ext_resource type="Texture2D" uid="uid://dcasdlch5dsl8" path="res://assets/maps/4store.jpg" id="1_b0m6h"]
-[ext_resource type="Script" uid="uid://fbg4lt80qqnb" path="res://scenes/maps/zones.gd" id="1_y0c4c"]
+[ext_resource type="Script" uid="uid://fbg4lt80qqnb" path="res://Scenes/maps/zones.gd" id="1_y0c4c"]
 [ext_resource type="Texture2D" uid="uid://cmyda61cho80x" path="res://assets/maps/4store.png" id="2_y0c4c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7xsa"]

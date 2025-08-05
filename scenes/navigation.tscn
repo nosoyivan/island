@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://thd46uutq42k" path="res://scripts/navigation.gd" id="1_mepwa"]
 [ext_resource type="NavigationPolygon" uid="uid://c8oqnidh8f7gm" path="res://assets/paths/GrassPath.tres" id="3_ypw01"]
-[ext_resource type="PackedScene" uid="uid://ct7veakwiei3h" path="res://scenes/character.tscn" id="4_n6iop"]
+[ext_resource type="PackedScene" uid="uid://ct7veakwiei3h" path="res://Scenes/character.tscn" id="4_n6iop"]
 
 [node name="Navigation" type="Node2D"]
 texture_filter = 1
