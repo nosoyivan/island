@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Navigation Polygon 2D"
 config/tags=PackedStringArray("2d", "ai", "demo", "official")
-run/main_scene="uid://djnwos0g4k4fs"
+run/main_scene="uid://c3cmkbjsbmlx0"
 config/features=PackedStringArray("4.4")
 config/icon="res://icon.webp"
 
