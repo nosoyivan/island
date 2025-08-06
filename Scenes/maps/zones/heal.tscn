@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://k8ty0dbynstc"]
+
+[ext_resource type="Script" uid="uid://fbg4lt80qqnb" path="res://Scenes/maps/zones.gd" id="1_psh38"]
+[ext_resource type="Texture2D" uid="uid://cxeiibib6myl6" path="res://assets/maps/heal.jpg" id="2_psh38"]
+[ext_resource type="Texture2D" uid="uid://cmyda61cho80x" path="res://assets/maps/4store.png" id="3_jf3l1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7xsa"]
+size = Vector2(151.359, 114.549)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orrll"]
+size = Vector2(74, 110.25)
+
+[node name="Heal" type="Node2D"]
+script = ExtResource("1_psh38")
+
+[node name="Map" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(245, 152)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_psh38")
+offset = Vector2(112.524, 139.569)
+
+[node name="Map2" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+texture_filter = 1
+position = Vector2(267, 194)
+scale = Vector2(0.942188, 0.942187)
+texture = ExtResource("3_jf3l1")
+offset = Vector2(112.524, 139.569)
+
+[node name="ZoneHeal" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneHeal"]
+position = Vector2(336, 527)
+rotation = 0.509933
+shape = SubResource("RectangleShape2D_k7xsa")
+
+[node name="Heal2Home" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heal2Home"]
+position = Vector2(667, 205.125)
+shape = SubResource("RectangleShape2D_orrll")

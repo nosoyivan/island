@@ -8,3 +8,11 @@ res://scenes/maps/cavezones.tscn
 res://digi/Interface.tscn
 res://scenes/character.tscn
 res://scripts/navigation.gd
+res://new_script.gd
+res://scenes/maps/zones/heal.tscn
+res://Scenes/maps/zones.tscn
+res://Scenes/maps/zones/heal.tscn
+res://Scenes/navigation.tscn
+res://assets/paths/HealPath.tres
+res://assets/paths/CavePath.tres
+res://Scenes/maps/grasszones.tscn

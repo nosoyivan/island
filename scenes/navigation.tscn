@@ -1,13 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjgad00c2xiuc"]
 
 [ext_resource type="Script" uid="uid://thd46uutq42k" path="res://scripts/navigation.gd" id="1_mepwa"]
-[ext_resource type="NavigationPolygon" uid="uid://c8oqnidh8f7gm" path="res://assets/paths/GrassPath.tres" id="3_ypw01"]
-[ext_resource type="PackedScene" uid="uid://ct7veakwiei3h" path="res://Scenes/character.tscn" id="4_n6iop"]
+[ext_resource type="PackedScene" uid="uid://ct7veakwiei3h" path="res://scenes/character.tscn" id="4_n6iop"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ut0uc"]
+vertices = PackedVector2Array(634.492, 114.023, 711.352, 72.6172, 699.898, 198.617, 299, 182.594, 203.344, 111.07, 232.273, 341.578, 299, 277.406, 286.719, 370.289, 304.539, 447.867, 576.859, 266.328, 625.773, 510.867, 445.328, 509, 328.68, 503.312)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(0, 2, 3, 4), PackedInt32Array(5, 4, 3, 6, 7), PackedInt32Array(8, 7, 6, 9, 10, 11, 12)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(632, 104, 192, 101, 223, 348, 278, 377, 295, 451, 322, 513, 445, 519, 638, 521, 585, 256, 309, 267, 309, 193, 709, 209, 723, 55)])
 
 [node name="Navigation" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_mepwa")
-Area = 1
 
 [node name="View" type="Control" parent="."]
 layout_mode = 3
@@ -37,6 +40,6 @@ process_callback = 0
 
 [node name="Path" type="NavigationRegion2D" parent="."]
 position = Vector2(-39, 92)
-navigation_polygon = ExtResource("3_ypw01")
+navigation_polygon = SubResource("NavigationPolygon_ut0uc")
 
 [connection signal="attack" from="Character" to="." method="_battleStart"]

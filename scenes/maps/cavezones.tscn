@@ -15,16 +15,16 @@ scale = Vector2(0.942188, 0.942187)
 texture = ExtResource("1_5kpy7")
 offset = Vector2(112.524, 139.569)
 
-[node name="Grass2CaveZone" type="Area2D" parent="."]
+[node name="Grass2Cave" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Grass2CaveZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grass2Cave"]
 position = Vector2(712.971, 301.208)
 rotation = 0.279253
 shape = SubResource("RectangleShape2D_fmum3")
 
-[node name="Cave2GrassZone" type="Area2D" parent="."]
+[node name="Cave2Grass" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave2GrassZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave2Grass"]
 position = Vector2(290.025, 118.461)
 rotation = -0.118682
 shape = SubResource("RectangleShape2D_fmum3")
