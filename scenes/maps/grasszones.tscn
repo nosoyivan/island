@@ -35,9 +35,9 @@ position = Vector2(712.971, 301.208)
 rotation = 0.279253
 shape = SubResource("RectangleShape2D_5xl0l")
 
-[node name="Grass2Home" type="Area2D" parent="."]
+[node name="Home" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Grass2Home"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Home"]
 position = Vector2(646, 639)
 rotation = -0.47822
 shape = SubResource("RectangleShape2D_pbu81")

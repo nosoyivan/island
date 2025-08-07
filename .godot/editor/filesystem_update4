@@ -1,10 +1,12 @@
-res://Scenes/maps/zones/heal.tscn
+res://scenes/ui.tscn
 res://digi/theme.tres
 res://assets/paths/GrassPath.tres
 res://assets/paths/CavePath.tres
-res://scenes/ui.tscn
 res://scenes/maps/cavezones.tscn
 res://Scenes/navigation.tscn
 res://scenes/maps/zones.tscn
 res://scenes/maps/grasszones.tscn
-res://assets/paths/HealPath.tres
+res://Scenes/maps/zones/fight.tscn
+res://Scenes/maps/zones/heal.tscn
+res://Scenes/maps/zones/tools.tscn
+res://scripts/navigation.gd

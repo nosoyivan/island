@@ -29,6 +29,7 @@ signal battleEnd                # Emit at the end of a battle (placeholder)
 
 const HOME_PATH  = preload("res://assets/paths/HomePath.tres")
 const HEAL_PATH  = preload("res://assets/paths/HealPath.tres")
+const TOOLS_PATH  = preload("res://assets/paths/ToolsPath.tres")
 const GRASS_PATH = preload("res://assets/paths/GrassPath.tres")
 const CAVE_PATH  = preload("res://assets/paths/CavePath.tres")
 #   ↑ Each of these defines the walkable area for that zone.
@@ -38,9 +39,11 @@ const CAVE_PATH  = preload("res://assets/paths/CavePath.tres")
 # ——————————————————————————————————————————————
 
 var ZonesScene       := preload("res://scenes/maps/zones.tscn")
+var HealZoneScene    := preload("res://Scenes/maps/zones/heal.tscn")
+var ToolsZoneScene    := preload("res://Scenes/maps/zones/tools.tscn")
+var FightZoneScene    := preload("res://Scenes/maps/zones/fight.tscn")
 var GrassZonesScene  := preload("res://scenes/maps/grasszones.tscn")
 var CaveZonesScene   := preload("res://scenes/maps/cavezones.tscn")
-var HealZoneScene    := preload("res://Scenes/maps/zones/heal.tscn")
 #   ↑ These hold the PackedScene references; we call `.instantiate()` when we need them.
 
 # ——————————————————————————————————————————————
@@ -72,12 +75,13 @@ func _clear_zone() -> void:
 func _go_to_home() -> void:
 	# 1) Teleport player to home start position:
 	var pos
-	if Stats.zone == "Base":
-		pos = Vector2(379, 301)
-	elif Stats.zone == "Grass":
-		pos = Vector2(379.0, 100)
-	elif Stats.zone == "Heal":
-		pos = Vector2(270, 480)
+	match Stats.zone:
+		"Base":  pos = Vector2(379,301)
+		"Grass": pos = Vector2(379,301)
+		"Heal":  pos = Vector2(270,480)
+		"Tools": pos = Vector2(323,233)
+		"Fight": pos = Vector2(565,375)
+		_:       Vector2.ZERO
 	Stats.zone = "Base"
 	#_NT("Base")
 	_hidezone(pos)
@@ -88,8 +92,9 @@ func _go_to_home() -> void:
 	add_child(current_zone)
 	# 4) Wire up all the Area2D signals in it:
 	_connect_areas(current_zone)
-	# 5) Swap the NavigationRegion’s polygon:
+	# 5) Swap the NavigationRegion’s polygon:	
 	path.navigation_polygon = HOME_PATH
+	print(Stats.zone)
 
 func _go_to_grass() -> void:
 	var pos
@@ -99,7 +104,6 @@ func _go_to_grass() -> void:
 		pos = Vector2(600, 270)
 	Stats.zone = "Grass"
 	#_NT("Grass")
-
 	_hidezone(pos)
 	_clear_zone()
 	current_zone = GrassZonesScene.instantiate()
@@ -129,7 +133,29 @@ func _go_to_heal() -> void:
 	_connect_areas(current_zone)
 	path.navigation_polygon = HEAL_PATH
 	p.scale = Vector2(3,3)
-	
+
+func _go_to_tools() -> void:
+	var pos = Vector2(530, 405)
+	Stats.zone = "Tools"
+	_hidezone(pos)
+	_clear_zone()
+	current_zone = ToolsZoneScene.instantiate()
+	add_child(current_zone)
+	_connect_areas(current_zone)
+	path.navigation_polygon = TOOLS_PATH
+	p.scale = Vector2(3,3)
+
+func _go_to_fight() -> void:
+	var pos = Vector2(250, 525)
+	Stats.zone = "Fight"
+	_hidezone(pos)
+	_clear_zone()
+	current_zone = FightZoneScene.instantiate()
+	add_child(current_zone)
+	_connect_areas(current_zone)
+	path.navigation_polygon = TOOLS_PATH
+	p.scale = Vector2(2.5,2.5)
+
 func _connect_areas(zone_node: Node) -> void:
 	# Finds every Area2D child of the newly added zone, turns on monitoring,
 	# and connects its body_entered to the appropriate callback.
@@ -151,6 +177,9 @@ func Home2GrassZone(body) -> void:
 func Grass2HomeZone(body) -> void:
 	_go_to_home()
 
+func HomeZone(body) -> void:
+	_go_to_home()
+
 func Grass2CaveZone(body) -> void:
 	_go_to_cave()
 
@@ -166,15 +195,21 @@ func HealZone(body) -> void:
 func Heal2HomeZone(body) -> void:
 	_go_to_home()
 
-func ToolZone(body):
-	_NT("Tool")
+func ToolsZone(body) -> void:
+	_go_to_tools()
+	_NT("Tools")
 	# (insert tool logic here)
+
+func Tool2HomeZone(body) -> void:
+	_go_to_home()
+	pass
 
 func FoodZone(body):
 	_NT("Food")
 	# (insert food logic here)
 
 func FightZone(body):
+	_go_to_fight()
 	_NT("Fight")
 	# (insert battle logic here)
 
@@ -196,13 +231,12 @@ func _hidezone(pos: Vector2) -> void:
 func _input(event) -> void:
 	# Debug: print the player’s current position if Esc is pressed
 	if event.is_action_pressed("Esc"):
-		print(p.global_position)
+		print(p.global_position,Stats.zone)
 
 # Emit the “message” signal and update Stats.zone:
 var NT: String = "Base"
 func _NT(text):
 	message.emit(text)
-	Stats.zone = text
 
 # Emit the “swap” signal (for UI/scene swaps, not used above):
 var SS: String = "Base"

@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6oc361jrmus1"]
+
+[ext_resource type="Script" uid="uid://fbg4lt80qqnb" path="res://Scenes/maps/zones.gd" id="1_yfkb7"]
+[ext_resource type="Texture2D" uid="uid://cxeiibib6myl6" path="res://assets/maps/heal.jpg" id="2_yonx8"]
+[ext_resource type="Texture2D" uid="uid://dgkc4xtbe8jlq" path="res://assets/maps/heal.png" id="3_rk3bv"]
+[ext_resource type="Texture2D" uid="uid://chyqpftdlgwtu" path="res://assets/maps/tools.jpg" id="3_yonx8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7xsa"]
+size = Vector2(151.359, 114.549)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orrll"]
+size = Vector2(156.202, 242.957)
+
+[node name="Tools" type="Node2D"]
+script = ExtResource("1_yfkb7")
+
+[node name="Map3" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(245, 152)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_yonx8")
+offset = Vector2(112.524, 139.569)
+
+[node name="Map" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(98, 63)
+scale = Vector2(2, 2)
+texture = ExtResource("3_yonx8")
+offset = Vector2(112.524, 139.569)
+
+[node name="Map2" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(245, 152)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_rk3bv")
+offset = Vector2(112.524, 139.569)
+
+[node name="ZoneUpgrade" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneUpgrade"]
+position = Vector2(95, 414)
+rotation = 0.509933
+shape = SubResource("RectangleShape2D_k7xsa")
+
+[node name="Home" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Home"]
+position = Vector2(606, 529)
+rotation = 1.22739
+shape = SubResource("RectangleShape2D_orrll")
